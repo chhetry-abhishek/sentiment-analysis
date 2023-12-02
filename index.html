@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <header>
+        <h1>Sentiment Analysis</h1>
+    </header>
+    <main>
+        <section class="input-section">
+            <h2>Enter Text for Analysis</h2>
+            <form action="/analyze" method="post">
+                <textarea name="text" rows="4" cols="50" required></textarea>
+                <button type="submit">Analyze</button>
+            </form>
+        </section>
+        {% if sentiment %}
+        <section class="result-section">
+            <h2>Analysis Result</h2>
+            <p>Sentiment: {{ sentiment }}</p>
+        </section>
+        {% endif %}
+    </main>
+    <footer>
+        &copy; !!! Sentiment Analysis website by Abhishek, Reeone and Siddartha!!!
+    </footer>
+</body>
+</html>
