@@ -1,4 +1,4 @@
-/* Reset some default styles for consistency */
+
 body, h1, h2, p, textarea, button {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body, h1, h2, p, textarea, button {
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    height: 100vh; /* Make the body fill the screen */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,7 +30,7 @@ main {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Fill the available space */
+    flex: 1; 
 }
 
 .input-section, .result-section {

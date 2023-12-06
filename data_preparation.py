@@ -8,9 +8,9 @@ def create_directory_if_not_exists(directory):
 
 def clean_text(text):
     """Remove HTML tags and punctuations from the text."""
-    text = re.sub(r'<[^>]+>', '', text)  # Remove HTML tags
-    text = re.sub(r'[^\w\s]', '', text)  # Remove punctuations
-    text = text.lower()  # Convert to lowercase
+    text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'[^\w\s]', '', text)
+    text = text.lower()
     return text
 
 def load_and_clean_reviews(directory, label_type):
@@ -33,7 +33,7 @@ def load_and_clean_reviews(directory, label_type):
     return reviews
 
 def main():
-    project_root = 'C:/Users/ab986/Desktop/sentiment-analysis'  # Update to your project root path
+    project_root = 'C:/Users/ab986/Desktop/sentiment-analysis'  
     data_dir = os.path.join(project_root, 'data/sorted_data_acl')
     output_dir = os.path.join(project_root, 'data')
     create_directory_if_not_exists(output_dir)
