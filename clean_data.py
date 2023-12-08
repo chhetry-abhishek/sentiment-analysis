@@ -4,7 +4,7 @@ import re
 def clean_text(text):
     """Cleans the input text."""
     text = text.lower() 
-    text = re.sub(r'[^\w\s]', '', text)  
+    text = re.sub(r'[^\w\s]', '', text) 
     text = re.sub(r'\d+', '', text) 
     text = re.sub(r'\s+', ' ', text).strip()  
     return text
@@ -27,4 +27,3 @@ def clean_reviews(input_directory, output_directory):
 
 output_directory = r'C:\Users\ab986\Desktop\sentiment_analysis_project\data\cleaned'
 
-clean_reviews(input_directory, output_directory)
