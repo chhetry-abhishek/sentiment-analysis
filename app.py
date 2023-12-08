@@ -1,16 +1,30 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request
+from textblob import TextBlob
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+def analyze_sentiment(text):
+    
+    analysis = TextBlob(text)
+    
+    if analysis.sentiment.polarity > 0:
+        return "Positive"
+    elif analysis.sentiment.polarity < 0:
+        return "Negative"
+    else:
+        return "Neutral"
 
-@app.route('/predict_sentiment', methods=['POST'])
-def predict_sentiment():
-    review = request.form['review']
-    sentiment_score = perform_sentiment_analysis(review)
-    return f'Sentiment: {sentiment_score}'
+@app.route("/analyze", methods=["GET", "POST"])
+def index():
+    sentiment = None
 
-if __name__ == '__main__':
+    if request.method == "POST":
+        text = request.form["text"]
+        sentiment = analyze_sentiment(text)
+
+    return render_template("index.html", sentiment=sentiment)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+:
     app.run(debug=True)
