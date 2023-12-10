@@ -14,6 +14,7 @@ def analyze_sentiment(text):
     else:
         return "Neutral"
 
+
 @app.route("/analyze", methods=["GET", "POST"])
 def index():
     sentiment = None
