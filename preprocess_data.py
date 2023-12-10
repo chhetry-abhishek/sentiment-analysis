@@ -40,7 +40,6 @@ tokenizer = Tokenizer(num_words=10000)
 tokenizer.fit_on_texts(shuffled_reviews)
 sequences = tokenizer.texts_to_sequences(shuffled_reviews)
 
-
 max_length = 100 
 data = pad_sequences(sequences, maxlen=max_length, padding='post', truncating='post')
 
