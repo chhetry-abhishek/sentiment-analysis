@@ -43,7 +43,6 @@ sequences = tokenizer.texts_to_sequences(shuffled_reviews)
 max_length = 100 
 data = pad_sequences(sequences, maxlen=max_length, padding='post', truncating='post')
 
-
 X_train, X_test, y_train, y_test = train_test_split(data, shuffled_labels, test_size=0.2, random_state=42)
 
 np.save(os.path.join(output_path, 'X_train.npy'), X_train)
