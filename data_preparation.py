@@ -29,7 +29,6 @@ def load_and_clean_reviews(directory, label_type):
             if '<review_text>' in line:
                 review = clean_text(line)
                 reviews.append((review, label))
-
     return reviews
 
 def main():
