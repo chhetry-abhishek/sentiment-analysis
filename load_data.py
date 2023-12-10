@@ -5,7 +5,6 @@ def load_data(data_file):
     reviews = []
     labels = []
 
-    
     with open(data_file, 'r', encoding='utf-8') as file:
         lines = file.readlines()
 
