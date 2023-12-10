@@ -53,4 +53,3 @@ np.save(os.path.join(output_path, 'y_test.npy'), y_test)
 import pickle
 with open(os.path.join(output_path, 'tokenizer.pickle'), 'wb') as handle:
     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
